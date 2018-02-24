@@ -74,29 +74,6 @@ public class LineageSettingsActivity extends BaseSetupWizardActivity {
         super.onCreate(savedInstanceState);
         mSetupWizardApp = (SetupWizardApp) getApplication();
         setNextText(R.string.next);
-        String privacy_policy = getString(R.string.services_privacy_policy);
-        String policySummary = getString(R.string.services_explanation, privacy_policy);
-        SpannableString ss = new SpannableString(policySummary);
-        ClickableSpan clickableSpan = new ClickableSpan() {
-            @Override
-            public void onClick(View textView) {
-                // At this point of the setup, the device has already been unlocked (if frp
-                // had been enabled), so there should be no issues regarding security
-                final Intent intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(PRIVACY_POLICY_URI));
-                try {
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Log.e(TAG, "Unable to start activity " + intent.toString(), e);
-                }
-            }
-        };
-        ss.setSpan(clickableSpan,
-                policySummary.length() - privacy_policy.length() - 1,
-                policySummary.length() - 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        TextView privacyPolicy = (TextView) findViewById(R.id.privacy_policy);
-        privacyPolicy.setMovementMethod(LinkMovementMethod.getInstance());
-        privacyPolicy.setText(ss);
 
         View navKeysRow = findViewById(R.id.nav_keys);
         navKeysRow.setOnClickListener(mNavKeysClickListener);
