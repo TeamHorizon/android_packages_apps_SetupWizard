@@ -138,7 +138,7 @@ public class LineageSettingsActivity extends BaseSetupWizardActivity {
 
     @Override
     protected int getTitleResId() {
-        return R.string.setup_services;
+        return R.string.setup_xenonhd;
     }
 
     @Override
