@@ -81,7 +81,7 @@
     <!-- secure lock screen -->
     <string name="settings_lockscreen_setup_title">Valitse näytön lukitustapa</string>
     <string name="settings_lockscreen_setup_details">Miten haluat lukita näyttösi?</string>
-    <string name="lockscreen_setup_title">Suojaa puhelintasi</string>
+    <string name="lockscreen_setup_title" product="default">Suojaa puhelintasi</string>
     <string name="lockscreen_setup_summary"><b>Suojaa laitetta</b> avaamalla näytön lukitus PIN-koodin, kuvion tai salasanan avulla</string>
     <string name="lockscreen_setup_screen_lock_setup">Asetusten määritys</string>
 </resources>
